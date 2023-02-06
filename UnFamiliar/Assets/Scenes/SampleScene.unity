@@ -1088,8 +1088,9 @@ GameObject:
   - component: {fileID: 659514798}
   - component: {fileID: 659514797}
   - component: {fileID: 659514801}
+  - component: {fileID: 659514802}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: WeightSwitch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1106,8 +1107,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.4225702, z: 1}
+  m_Center: {x: 0, y: 0.21128473, z: 0}
 --- !u!23 &659514798
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1186,6 +1187,113 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gate: {fileID: 191484855}
+--- !u!114 &659514802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659514795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_ImpulseShape: 0
+    m_CustomImpulseShape:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1.196586
+        outSlope: 1.196586
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.42241016
+        value: 0.50545007
+        inSlope: 5.560663
+        outSlope: 5.560663
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.042413246
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.55726755
+        value: 0.33676282
+        inSlope: 0.70785284
+        outSlope: 0.70785284
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.71498865
+        value: 0.75733596
+        inSlope: -6.213445
+        outSlope: -6.213445
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.07109417
+      - serializedVersion: 3
+        time: 0.8527304
+        value: 0.534564
+        inSlope: 2.8165202
+        outSlope: 2.8165202
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.2625928
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: -0.06367874
+        inSlope: -4.062228
+        outSlope: -4.062228
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_ImpulseDuration: 0.86
+    m_ImpulseType: 0
+    m_DissipationRate: 0.25
+    m_RawSignal: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.2
+      m_DecayTime: 0.7
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 100
+    m_PropagationSpeed: 343
+  m_DefaultVelocity: {x: 0, y: -1, z: 0}
 --- !u!1 &690439218
 GameObject:
   m_ObjectHideFlags: 3
@@ -1269,7 +1377,7 @@ GameObject:
   - component: {fileID: 794071919}
   - component: {fileID: 794071918}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Weight
   m_TagString: Weight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1362,7 +1470,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794071917}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.79, y: 1.45, z: 0}
+  m_LocalPosition: {x: 7.79, y: 0.951, z: 0}
   m_LocalScale: {x: 1.8397, y: 1.8397, z: 1.8397}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1506,6 +1614,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1205031705}
   - component: {fileID: 1205031704}
+  - component: {fileID: 1205031706}
   m_Layer: 0
   m_Name: VirtualCamera
   m_TagString: Untagged
@@ -1567,6 +1676,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1205031706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205031703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00b2d199b96b516448144ab30fb26aed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ApplyAfter: 2
+  m_ChannelMask: 1
+  m_Gain: 1
+  m_Use2DDistance: 0
+  m_UseCameraSpace: 1
+  m_ReactionSettings:
+    m_SecondaryNoise: {fileID: 0}
+    m_AmplitudeGain: 1
+    m_FrequencyGain: 1
+    m_Duration: 1
+    m_NoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &1362988476
 GameObject:
   m_ObjectHideFlags: 0
@@ -1888,7 +2020,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 2.0428286
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &1765404370
