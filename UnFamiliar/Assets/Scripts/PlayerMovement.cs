@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
     public float jumpStrength;
     public float gravityScale;
 
+    public float pushForce = 1f;
+
     private Vector3 moveDirection;
     void Start()
     {
@@ -36,5 +38,16 @@ public class PlayerMovement : MonoBehaviour
         moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale); //gravity we can set in inspector
 
         controller.Move(moveDirection * Time.deltaTime);
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        Rigidbody body = hit.collider.attachedRigidbody;
+        if(body == null || body.isKinematic)
+        {
+            return;
+        }
+        Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, 0);
+        body.velocity = pushDir * pushForce;
     }
 }
