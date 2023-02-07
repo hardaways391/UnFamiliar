@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 moveDirection;
     void Start()
     {
-       controller = GetComponent<CharacterController>();
+        controller = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonUp("Jump") && moveDirection.y > 0) //lil baby jump
         {
             moveDirection.y = (jumpStrength * 0.35f);
-        } 
+        }
 
         moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale); //gravity we can set in inspector
 
@@ -43,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         Rigidbody body = hit.collider.attachedRigidbody;
-        if(body == null || body.isKinematic)
+        if (body == null || body.isKinematic)
         {
             return;
         }
