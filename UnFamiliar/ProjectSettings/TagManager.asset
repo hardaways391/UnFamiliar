@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Pause
   - Weight
+  - PuzzlePanel
   layers:
   - Default
   - TransparentFX

@@ -24,18 +24,21 @@ public class PlayerMovement : MonoBehaviour
 
         if (controller.isGrounded)
         {
+            moveDirection.y = -1f;
             if (Input.GetButtonDown("Jump")) //full strength jump
             {
                 moveDirection.y = jumpStrength;
             }
+        }
+        else
+        {
+            moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale); //gravity we can set in inspector
         }
 
         if (Input.GetButtonUp("Jump") && moveDirection.y > 0) //lil baby jump
         {
             moveDirection.y = (jumpStrength * 0.35f);
         }
-
-        moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale); //gravity we can set in inspector
 
         controller.Move(moveDirection * Time.deltaTime);
     }
