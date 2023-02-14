@@ -28,5 +28,19 @@ public class PauseMenu : MonoBehaviour
             paused = false;
             Time.timeScale = 1f;
         }
+
+        if (paused)
+        {
+            if (Input.GetKeyDown(KeyCode.Y))
+            {
+                Application.Quit();
+            }
+            else if (Input.GetKeyUp(KeyCode.N))
+            {
+                paused = false;
+                pauseMenu.SetActive(false);
+                Time.timeScale = 1f;
+            }
+        }
     }
 }

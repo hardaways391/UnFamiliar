@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float pushForce = 1f;
 
-    private Vector3 moveDirection;
+    public Vector3 moveDirection;
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -24,22 +24,22 @@ public class PlayerMovement : MonoBehaviour
 
         if (controller.isGrounded)
         {
-            moveDirection.y = -1f;
+            moveDirection.y = -0.01f;
             if (Input.GetButtonDown("Jump")) //full strength jump
             {
-                moveDirection.y = jumpStrength;
+                moveDirection.y = (jumpStrength * Time.deltaTime);
             }
         }
         else
         {
-            moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale); //gravity we can set in inspector
+            moveDirection.y -= (gravityScale * Time.deltaTime); //gravity we can set in inspector
         }
-
+        /*
         if (Input.GetButtonUp("Jump") && moveDirection.y > 0) //lil baby jump
         {
             moveDirection.y = (jumpStrength * 0.35f);
         }
-
+        */
         controller.Move(moveDirection * Time.deltaTime);
     }
 
