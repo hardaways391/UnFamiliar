@@ -12,6 +12,8 @@ public class PlayerMovement2 : MonoBehaviour
     public float jumpHeight = 1.75f;
     private float gravity = 9.8f;
     public float pushForce = 2f;
+    
+    float xDirect;
 
     private void Start()
     {
@@ -60,6 +62,16 @@ public class PlayerMovement2 : MonoBehaviour
         move.y = verticalVelocity;
 
         controller.Move(move * Time.deltaTime); // always call at the end so everything else is already lined up properly
+
+        if (Input.GetKey (KeyCode.LeftShift))
+             speed  = 5f;
+
+        else
+              speed= 3.5f;
+
+              xDirect = Input.GetAxis("Horizontal") * speed;
+      
+
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
