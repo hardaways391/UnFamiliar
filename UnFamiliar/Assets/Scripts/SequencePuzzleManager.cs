@@ -26,6 +26,8 @@ public class SequencePuzzleManager : MonoBehaviour
 
     public Sprite blank; // the empty circle
 
+    public AudioSource buttonSound;
+
 
     // the sequence we set in unity, and the sequence input by the player
     public List<int> correctSequence = new List<int>();
@@ -56,6 +58,7 @@ public class SequencePuzzleManager : MonoBehaviour
     {
         currentSequence.Add(1); //just the num that corresponds with symbol (left to right in unity panel)
         buttonsPushed++;
+        buttonSound.Play();
         if (buttonsPushed == 1)
         {
             left.sprite = circle;
@@ -82,6 +85,7 @@ public class SequencePuzzleManager : MonoBehaviour
     {
         currentSequence.Add(2); //just the num that corresponds with symbol (left to right in unity panel)
         buttonsPushed++;
+        buttonSound.Play();
         if (buttonsPushed == 1)
         {
             left.sprite = square;
@@ -108,6 +112,7 @@ public class SequencePuzzleManager : MonoBehaviour
     {
         currentSequence.Add(3); //just the num that corresponds with symbol (left to right in unity panel)
         buttonsPushed++;
+        buttonSound.Play();
         if (buttonsPushed == 1)
         {
             left.sprite = triangle;
