@@ -24,6 +24,8 @@ public class SequencePuzzleManager : MonoBehaviour
     public Sprite square;
     public Sprite triangle;
 
+    public Sprite blank; // the empty circle
+
 
     // the sequence we set in unity, and the sequence input by the player
     public List<int> correctSequence = new List<int>();
@@ -152,10 +154,10 @@ public class SequencePuzzleManager : MonoBehaviour
     
     public void resetSprites()
     {
-        left.sprite = null;
-        middleLeft.sprite = null;
-        middle.sprite = null;
-        middleRight.sprite = null;
-        right.sprite = null;
+        left.sprite = blank;
+        middleLeft.sprite = blank;
+        middle.sprite = blank;
+        middleRight.sprite = blank;
+        right.sprite = blank;
     }
 }

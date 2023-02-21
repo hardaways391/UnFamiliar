@@ -9,6 +9,7 @@ TagManager:
   - PuzzlePanel
   - CheckPoint
   - DeathZone
+  - ConfirmQuit
   layers:
   - Default
   - TransparentFX
