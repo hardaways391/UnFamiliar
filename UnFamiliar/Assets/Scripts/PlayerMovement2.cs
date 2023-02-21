@@ -14,6 +14,7 @@ public class PlayerMovement2 : MonoBehaviour
     public float pushForce = 2f;
     
     float xDirect;
+    private float zLock;
 
     private void Start()
     {
@@ -61,17 +62,22 @@ public class PlayerMovement2 : MonoBehaviour
 
         move.y = verticalVelocity;
 
+        if (transform.position.z != zLock)
+        {
+            move.z = (zLock - transform.position.z) * 25f;
+        }
         controller.Move(move * Time.deltaTime); // always call at the end so everything else is already lined up properly
 
-        if (Input.GetKey (KeyCode.LeftShift))
-             speed  = 5f;
-
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = 5f;
+        }
         else
-              speed= 3.5f;
+        {
+            speed = 3.5f;
 
-              xDirect = Input.GetAxis("Horizontal") * speed;
-      
-
+            xDirect = Input.GetAxis("Horizontal") * speed;
+        }
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)

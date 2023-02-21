@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class StartSequencePuzzle : MonoBehaviour
 {
-    public PlayerMovement playerMovement;
-
     public GameObject sequencePuzzlePanel;
 
     void Start()
