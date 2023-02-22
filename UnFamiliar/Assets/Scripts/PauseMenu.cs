@@ -5,13 +5,17 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
+    public GameObject confirmQuit;
     private bool paused;
+    public AudioSource buttonSound;
 
     private void Start()
     {
         pauseMenu = GameObject.FindGameObjectWithTag("Pause");
+        confirmQuit = GameObject.FindGameObjectWithTag("ConfirmQuit");
         paused = false;
         pauseMenu.SetActive(false);
+        confirmQuit.SetActive(false);
     }
 
     private void Update()
@@ -28,19 +32,32 @@ public class PauseMenu : MonoBehaviour
             paused = false;
             Time.timeScale = 1f;
         }
+    }
 
-        if (paused)
-        {
-            if (Input.GetKeyDown(KeyCode.Y))
-            {
-                Application.Quit();
-            }
-            else if (Input.GetKeyUp(KeyCode.N))
-            {
-                paused = false;
-                pauseMenu.SetActive(false);
-                Time.timeScale = 1f;
-            }
-        }
+    public void Resume()
+    {
+        buttonSound.Play();
+        paused = false;
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void ConfirmQuit()
+    {
+        buttonSound.Play();
+        confirmQuit.SetActive(true);
+        pauseMenu.SetActive(false);
+    }
+
+    public void CancelQuit()
+    {
+        buttonSound.Play();
+        confirmQuit.SetActive(false);
+        pauseMenu.SetActive(true);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
