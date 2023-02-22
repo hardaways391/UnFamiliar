@@ -5,16 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class Level_Loader : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Lvl1()
     {
-        
+        SceneManager.LoadScene("Level 1");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void MainMenu()
     {
-        
+        SceneManager.LoadScene("Menu");
+    }
+
+    public void Credits()
+    {
+        SceneManager.LoadScene("Credits");
     }
 
     // LevelLoad allows you to acess the scenes 
