@@ -20,7 +20,7 @@ public class FogFollow : MonoBehaviour
     void Update()
     {
         fogPos.z = target.transform.position.y + depthOffset;
-        fogPos.x = target.transform.position.x; // Change The X position on the camera variable to be the same as the ObjectToFollow X position
-        fog.transform.position = fogPos; // Moves the Camera to the new position
+        fogPos.x = target.transform.position.x; // Change The X position of fog to be the same as the target X position
+        fog.transform.position = fogPos; // Moves the fog to the new position
     }
 }
