@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Level_Loader : MonoBehaviour
 {
+    public GameObject optionScreen;
     public void Lvl1()
     {
         SceneManager.LoadScene("Level 1");
@@ -14,6 +15,7 @@ public class Level_Loader : MonoBehaviour
     {
         SceneManager.LoadScene("Menu");
     }
+    
 
     public void Credits()
     {
