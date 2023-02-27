@@ -8,7 +8,8 @@ public class PlayerMovement2 : MonoBehaviour
     public CharacterController controller;
     private float verticalVelocity;
     private float groundedTimer;        // to allow jumping when going down ramps
-    public float speed = 3.5f;
+    public float baseSpeed;
+    private float speed;
     public float jumpHeight = 1.75f;
     private float gravity = 9.8f;
     public float pushForce = 2f;
@@ -70,11 +71,11 @@ public class PlayerMovement2 : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            speed = 5f;
+            speed = 2.5f;
         }
         else
         {
-            speed = 3.5f;
+            speed = baseSpeed;
 
             xDirect = Input.GetAxis("Horizontal") * speed;
         }
