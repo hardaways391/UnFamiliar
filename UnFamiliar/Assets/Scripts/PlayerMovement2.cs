@@ -57,13 +57,11 @@ public class PlayerMovement2 : MonoBehaviour
         {
             animator.SetBool("movingLeft", true);
             animator.SetBool("movingRight", false);
-            Debug.Log("left");
         }
         else if(move.x > 0) //Flip so the animation plays in the correct direction
         {
             animator.SetBool("movingRight", true);
             animator.SetBool("movingLeft", false);
-            Debug.Log("right");
         }
         else
         {
