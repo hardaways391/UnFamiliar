@@ -13,12 +13,19 @@ public class PlayerMovement2 : MonoBehaviour
     public float jumpHeight = 1.75f;
     private float gravity = 9.8f;
     public float pushForce = 2f;
+
+    public bool movingLeft;
+    public bool movingRight;
+    public bool facingRight;
+
+    private Animator animator;
     
     float xDirect;
     private float zLock;
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         controller = gameObject.GetComponent<CharacterController>();
     }
 
@@ -45,6 +52,22 @@ public class PlayerMovement2 : MonoBehaviour
         verticalVelocity -= gravity * Time.deltaTime;
 
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, 0); //move only left/right
+
+        if(move.x < 0) //Flip so the animation plays in the correct direction
+        {
+            animator.SetBool("movingLeft", true);
+            animator.SetBool("movingRight", false);
+        }
+        else if(move.x > 0) //Flip so the animation plays in the correct direction
+        {
+            animator.SetBool("movingRight", true);
+            animator.SetBool("movingLeft", false);
+        }
+        else
+        {
+            animator.SetBool("movingRight", false);
+            animator.SetBool("movingLeft", false);
+        }
         move *= speed; // adjust speed in unity
 
         // allow jump as long as the player is on the ground

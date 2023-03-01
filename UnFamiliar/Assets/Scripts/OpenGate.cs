@@ -15,7 +15,7 @@ public class OpenGate : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Weight")) //player or weight object can open gate
+        if (other.CompareTag("Weight") || other.CompareTag("Player")) //player or weight object can open gate
         {
             gate.Play("OpenGate", 0, 0f);
         }
@@ -23,7 +23,7 @@ public class OpenGate : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Weight")) //if no weight, gate closes
+        if (other.CompareTag("Weight") || other.CompareTag("Player")) //if no weight, gate closes
         {
             gate.Play("CloseGate", 0, 0f);
             Shake();

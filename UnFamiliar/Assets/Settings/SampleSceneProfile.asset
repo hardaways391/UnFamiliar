@@ -43,10 +43,10 @@ MonoBehaviour:
   active: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 1.44
+    m_Value: 2.61
   intensity:
     m_OverrideState: 1
-    m_Value: 9.39
+    m_Value: 7.72
   scatter:
     m_OverrideState: 1
     m_Value: 0.7
@@ -57,10 +57,10 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   highQualityFiltering:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
   skipIterations:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 1
   dirtTexture:
     m_OverrideState: 1
@@ -165,17 +165,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   postExposure:
-    m_OverrideState: 1
-    m_Value: 0
+    m_OverrideState: 0
+    m_Value: 0.2
   contrast:
     m_OverrideState: 1
-    m_Value: 20
+    m_Value: 35
   colorFilter:
-    m_OverrideState: 0
-    m_Value: {r: 0, g: 0.8018868, b: 0.16581011, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 1.035265, g: 0.87693036, b: 0.79979295, a: 1}
   hueShift:
     m_OverrideState: 0
-    m_Value: 31
+    m_Value: 133
   saturation:
     m_OverrideState: 1
     m_Value: -21
