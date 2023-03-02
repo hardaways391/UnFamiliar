@@ -52,7 +52,7 @@ public class PlayerMovement2 : MonoBehaviour
         verticalVelocity -= gravity * Time.deltaTime;
 
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, 0); //move only left/right
-
+        
         if(move.x < 0) //Flip so the animation plays in the correct direction
         {
             animator.SetBool("movingLeft", true);
@@ -68,6 +68,7 @@ public class PlayerMovement2 : MonoBehaviour
             animator.SetBool("movingRight", false);
             animator.SetBool("movingLeft", false);
         }
+
         move *= speed; // adjust speed in unity
 
         // allow jump as long as the player is on the ground
@@ -86,11 +87,10 @@ public class PlayerMovement2 : MonoBehaviour
 
         move.y = verticalVelocity;
 
-        if (transform.position.z != zLock)
+        if (transform.position.z != zLock) //if we ever deviate from our z position, push us back
         {
             move.z = (zLock - transform.position.z) * 25f;
         }
-        controller.Move(move * Time.deltaTime); // always call at the end so everything else is already lined up properly
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -102,6 +102,8 @@ public class PlayerMovement2 : MonoBehaviour
 
             xDirect = Input.GetAxis("Horizontal") * speed;
         }
+
+        controller.Move(move * Time.deltaTime); // always call at the end so everything else is already lined up properly
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)

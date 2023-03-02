@@ -22,6 +22,11 @@ public class Level_Loader : MonoBehaviour
         SceneManager.LoadScene("Credits");
     }
 
+    public void SettingsMenu()
+    {
+        SceneManager.LoadScene("SettingsMenu");
+    }
+
     // LevelLoad allows you to acess the scenes 
     public void LevelLoad(int buildum) => SceneManager.LoadScene(buildum);
 }
