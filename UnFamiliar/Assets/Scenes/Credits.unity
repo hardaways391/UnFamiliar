@@ -1159,11 +1159,10 @@ MonoBehaviour:
   m_text: "Jamya Mosely\nJamie Raimundo\nAlana Trinidad\nJacob Tutor\n\n\nAsenath
     De Leon\nAllana Hardaway\nBreckon Hoyt\nEvan Mills \nSamantha Munguia\nJamie
     Raimundo\nAlana Trinidad\nJacob Tutor\nKatie Williams\n\n\nJamie Raimundo\nHugo
-    Tiznado\n\n\nDan Tran\nJacob Tutor\n\n\nAsenath De Leon\nTony Hernandez\nEvan
-    Mills\nAlana Hardaway\n\n\nHugo Tiznado\nAlana Trinidad\n\n\nJamya Mosely\nJamie
-    Raimundo\nJacob Tutor\n\n\nSamantha Munguia\nHugo Tiznado\nAlana Trinidad\n\n\nTony
-    Hernandez\nBreckon Hoyt\nSean Wallace\n\n\nTony Hernandez\nBreckon Hoyt\nJamie
-    Raimundo\nDan Tran\nAlana Trinidad\nJacob Tutor\nSean Wallace"
+    Tiznado\n\n\nDan Tran\nJacob Tutor\n\n\nAsenath De Leon\nEvan Mills\nAlana Hardaway\n\n\n\nHugo
+    Tiznado\nAlana Trinidad\n\n\nJamya Mosely\nJamie Raimundo\nJacob Tutor\n\n\nSamantha
+    Munguia\nHugo Tiznado\nAlana Trinidad\n\n\nBreckon Hoyt\nSean Wallace\n\n\n\nBreckon
+    Hoyt\nJamie Raimundo\nDan Tran\nAlana Trinidad\nJacob Tutor\nSean Wallace"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5891d247ce011f043afb155b6de8a98c, type: 2}
   m_sharedMaterial: {fileID: -2626952019731363096, guid: 5891d247ce011f043afb155b6de8a98c,

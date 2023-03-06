@@ -52,22 +52,6 @@ public class PlayerMovement2 : MonoBehaviour
         verticalVelocity -= gravity * Time.deltaTime;
 
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, 0); //move only left/right
-        
-        if(move.x < 0) //Flip so the animation plays in the correct direction
-        {
-            animator.SetBool("movingLeft", true);
-            animator.SetBool("movingRight", false);
-        }
-        else if(move.x > 0) //Flip so the animation plays in the correct direction
-        {
-            animator.SetBool("movingRight", true);
-            animator.SetBool("movingLeft", false);
-        }
-        else
-        {
-            animator.SetBool("movingRight", false);
-            animator.SetBool("movingLeft", false);
-        }
 
         move *= speed; // adjust speed in unity
 

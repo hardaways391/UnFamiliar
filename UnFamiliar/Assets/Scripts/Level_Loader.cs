@@ -6,9 +6,14 @@ using UnityEngine.SceneManagement;
 public class Level_Loader : MonoBehaviour
 {
     public GameObject optionScreen;
-    public void Lvl1()
+    public void Forest()
     {
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene("Forest");
+    }
+
+    public void City()
+    {
+        SceneManager.LoadScene("City");
     }
 
     public void MainMenu()
