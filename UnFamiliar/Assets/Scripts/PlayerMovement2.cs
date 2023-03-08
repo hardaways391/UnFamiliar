@@ -6,7 +6,7 @@ public class PlayerMovement2 : MonoBehaviour
     // a fix to the weird character controller v1
     // minimal air control
     public CharacterController controller;
-    private float verticalVelocity;
+    public float verticalVelocity;
     private float groundedTimer;        // to allow jumping when going down ramps
     public float baseSpeed;
     private float speed;
@@ -52,22 +52,6 @@ public class PlayerMovement2 : MonoBehaviour
         verticalVelocity -= gravity * Time.deltaTime;
 
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, 0); //move only left/right
-        
-        if(move.x < 0) //Flip so the animation plays in the correct direction
-        {
-            animator.SetBool("movingLeft", true);
-            animator.SetBool("movingRight", false);
-        }
-        else if(move.x > 0) //Flip so the animation plays in the correct direction
-        {
-            animator.SetBool("movingRight", true);
-            animator.SetBool("movingLeft", false);
-        }
-        else
-        {
-            animator.SetBool("movingRight", false);
-            animator.SetBool("movingLeft", false);
-        }
 
         move *= speed; // adjust speed in unity
 
