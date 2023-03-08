@@ -10,6 +10,7 @@ TagManager:
   - CheckPoint
   - DeathZone
   - ConfirmQuit
+  - Ground
   layers:
   - Default
   - TransparentFX

@@ -6,7 +6,7 @@ public class PlayerMovement2 : MonoBehaviour
     // a fix to the weird character controller v1
     // minimal air control
     public CharacterController controller;
-    private float verticalVelocity;
+    public float verticalVelocity;
     private float groundedTimer;        // to allow jumping when going down ramps
     public float baseSpeed;
     private float speed;
