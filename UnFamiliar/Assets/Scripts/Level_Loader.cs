@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Level_Loader : MonoBehaviour
 {
-    public GameObject optionScreen;
+    public AudioSource buttonSound;
+    //public GameObject optionScreen;
     public void Forest()
     {
         SceneManager.LoadScene("Forest");
@@ -32,6 +33,11 @@ public class Level_Loader : MonoBehaviour
         SceneManager.LoadScene("SettingsMenu");
     }
 
+    public void PlaySound()
+    {
+        buttonSound.Play();
+    }
+
     // LevelLoad allows you to acess the scenes 
-    public void LevelLoad(int buildum) => SceneManager.LoadScene(buildum);
+    //public void LevelLoad(int buildum) => SceneManager.LoadScene(buildum);
 }

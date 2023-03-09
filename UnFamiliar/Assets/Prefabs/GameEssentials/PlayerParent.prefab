@@ -9732,6 +9732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
+  verticalVelocity: 0
   baseSpeed: 2
   jumpHeight: 1.75
   pushForce: 2
@@ -9750,7 +9751,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 0
-  m_Radius: 0.38
+  m_Radius: 0.37
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.0001
@@ -9765,9 +9766,10 @@ AudioSource:
   m_GameObject: {fileID: 4815235210489970096}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 1208556dcbcd18d4ab85bd9ec3146ce6,
+    type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -9874,6 +9876,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 66f54a36c64250542943a30e9879e1c1, type: 3}
   - {fileID: 8300000, guid: bff82e12170e2cb40ae2629b62d0f09c, type: 3}
   - {fileID: 8300000, guid: d550e3eab1af1764cab4577e68a1237d, type: 3}
+  coolDown: 2.75
 --- !u!1001 &4815235210261472105
 PrefabInstance:
   m_ObjectHideFlags: 0
