@@ -5806,7 +5806,7 @@ PrefabInstance:
         type: 3}
       propertyPath: particles
       value: 
-      objectReference: {fileID: 1171136648328235526, guid: 14d73e57f07a96847b940ab99b817ef6,
+      objectReference: {fileID: 1171136648328235526, guid: 4ba19cca64614bc4f9b5ef2ab659b12d,
         type: 3}
     - target: {fileID: 2565499329055998024, guid: 70a9689bdebf29e4dad929bd2c3e077c,
         type: 3}

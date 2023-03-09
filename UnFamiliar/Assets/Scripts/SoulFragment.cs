@@ -6,16 +6,13 @@ using UnityEngine.UI;
 public class SoulFragment : MonoBehaviour
 {
     public SoulCounter soulSO;
-
+    //========================UI Elements=====================
     public CanvasGroup canvas;
     public float fadeTime;
     public float waitTime;
 
     public int soulsCollected;
-
-    private Vector3 thisLocation;
-    public GameObject particles;
-
+    //=========================Images==========================
     public Image empty;
 
     public Sprite zero;
@@ -28,14 +25,19 @@ public class SoulFragment : MonoBehaviour
     public Sprite seven;
     public Sprite eight;
     public Sprite nine;
+    //==========================Audio and Animation FX========================
+    public AudioSource source;
+    public AudioClip clip;
 
     public Animator animator;
     public string disappear = "disappear";
 
+    private Vector3 thisLocation;
+    public GameObject particles;
+
     private void Start()
     {
         thisLocation = transform.position;
-        //soulsCollected = soulCounter.soulsNum;
     }
 
     public void OnTriggerEnter(Collider other)
@@ -47,6 +49,9 @@ public class SoulFragment : MonoBehaviour
             animator.Play(disappear, 0, 0f);
             Instantiate(particles, thisLocation, Quaternion.identity);
             soulSO.soulsNum++;
+
+            source.clip = clip;
+            source.Play();
         }
     }
 

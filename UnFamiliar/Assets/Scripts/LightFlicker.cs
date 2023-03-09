@@ -7,8 +7,10 @@ public class LightFlicker : MonoBehaviour
     private float time = 0f;
     private bool emit = false;
     public float randNum;
+    public float lightStrength;
 
     public Material flickerMat;
+    public Light lit;
 
     private void Start()
     {
@@ -22,10 +24,12 @@ public class LightFlicker : MonoBehaviour
             if (emit)
             {
                 flickerMat.EnableKeyword("_EMISSION");
+                lit.intensity = lightStrength;
             }
             else
             {
                 flickerMat.DisableKeyword("_EMISSION");
+                lit.intensity = 0;
             }
             time = 0f;
             RandGenerate();
