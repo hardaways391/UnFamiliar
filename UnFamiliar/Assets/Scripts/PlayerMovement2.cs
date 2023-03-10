@@ -14,23 +14,37 @@ public class PlayerMovement2 : MonoBehaviour
     private float gravity = 9.8f;
     public float pushForce = 2f;
 
-    public bool movingLeft;
-    public bool movingRight;
-    public bool facingRight;
+    public bool movementLocked;
 
-    private Animator animator;
+    public Vector3 move;
     
     float xDirect;
     private float zLock;
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
+        movementLocked= false;
         controller = gameObject.GetComponent<CharacterController>();
+    }
+
+    public void LockMovement()
+    {
+        movementLocked = true;
+    }
+
+    public void UnLockMovement()
+    {
+        movementLocked = false;
     }
 
     void Update()
     {
+        if (movementLocked == true)
+        {
+            return;
+        }
+
         bool groundedPlayer = controller.isGrounded;
         if (groundedPlayer)
         {
@@ -51,7 +65,7 @@ public class PlayerMovement2 : MonoBehaviour
         // constant gravity keeps us pulled down when going down ramps
         verticalVelocity -= gravity * Time.deltaTime;
 
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, 0); //move only left/right
+        move = new Vector3(Input.GetAxis("Horizontal"), 0, 0); //move only left/right
 
         move *= speed; // adjust speed in unity
 
@@ -78,7 +92,7 @@ public class PlayerMovement2 : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            speed = 2.5f;
+            speed = 3.75f;
         }
         else
         {

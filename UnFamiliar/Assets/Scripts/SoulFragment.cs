@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class SoulFragment : MonoBehaviour
 {
     public SoulCounter soulSO;
+    public PlayerMovement2 pm2;
     //========================UI Elements=====================
     public CanvasGroup canvas;
     public float fadeTime;
@@ -45,7 +46,7 @@ public class SoulFragment : MonoBehaviour
         if (other.gameObject.tag == ("Player"))
         {
             StartCoroutine(Visible());
-            //soulsCollected++;
+            StartCoroutine(LockPlayer());
             animator.Play(disappear, 0, 0f);
             Instantiate(particles, thisLocation, Quaternion.identity);
             soulSO.soulsNum++;
@@ -53,6 +54,13 @@ public class SoulFragment : MonoBehaviour
             source.clip = clip;
             source.Play();
         }
+    }
+
+    public IEnumerator LockPlayer()
+    {
+        pm2.LockMovement();
+        yield return new WaitForSeconds(5);
+        pm2.UnLockMovement();
     }
 
     public IEnumerator Visible()

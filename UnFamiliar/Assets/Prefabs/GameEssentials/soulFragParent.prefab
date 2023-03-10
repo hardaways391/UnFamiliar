@@ -113,11 +113,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soulSO: {fileID: 0}
-  canvas: {fileID: 0}
+  pm2: {fileID: 7551195033591937897, guid: 13627ec458431174f902671b3428138b, type: 3}
+  canvas: {fileID: 3672517676390712893, guid: c0e3eab77a361184c925f6b708a2c5cf, type: 3}
   fadeTime: 2
   waitTime: 5
   soulsCollected: 0
-  empty: {fileID: 0}
+  empty: {fileID: 8851511266955268058, guid: fe32f616e3a1abb499d536ae163a695a, type: 3}
   zero: {fileID: 21300000, guid: bb8d84468e02c4c49b8b8c83b4d28805, type: 3}
   one: {fileID: 21300000, guid: 33dd140c6acecfe4c93b8e7be6cb94b5, type: 3}
   two: {fileID: 21300000, guid: cd81f21fa35adbe42a9e47715c8656c3, type: 3}
@@ -132,7 +133,7 @@ MonoBehaviour:
   clip: {fileID: 8300000, guid: 589fdc666475b2643956b7e345e8d43d, type: 3}
   animator: {fileID: 2565499329055998031}
   disappear: disappear
-  particles: {fileID: 2961210779094256626, guid: 62461282000e176409e6afd3ecab8e42,
+  particles: {fileID: 1171136648328235526, guid: 4ba19cca64614bc4f9b5ef2ab659b12d,
     type: 3}
 --- !u!95 &2565499329055998031
 Animator:
