@@ -59,7 +59,7 @@ public class SoulFragment : MonoBehaviour
     public IEnumerator LockPlayer()
     {
         pm2.LockMovement();
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(1.25f);
         pm2.UnLockMovement();
     }
 
@@ -92,6 +92,16 @@ public class SoulFragment : MonoBehaviour
 
     public void Update()
     {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            StartCoroutine(Visible());
+        }
+
+        if(pm2.stamina <=0)
+        {
+            StartCoroutine(Visible());
+        }
+
         if (soulSO.soulsNum == 0)
         {
             empty.sprite = zero;

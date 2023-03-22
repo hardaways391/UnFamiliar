@@ -25,12 +25,17 @@ public class MeowButton : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                int index = Random.Range(0, meow.Length);
-                meowClip = meow[index];
-                audioSource.clip = meowClip;
-                audioSource.Play();
-                countDown = coolDown;
+                Meow();
             }
         }
+    }
+
+    public void Meow()
+    {
+        int index = Random.Range(0, meow.Length);
+        meowClip = meow[index];
+        audioSource.clip = meowClip;
+        audioSource.Play();
+        countDown = coolDown;
     }
 }

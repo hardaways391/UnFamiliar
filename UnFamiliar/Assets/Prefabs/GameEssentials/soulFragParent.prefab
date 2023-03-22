@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2565499329055998021}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.03, y: 0.41, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -112,13 +112,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91f0e7b2691cc6e41b09b9ce4703f60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soulSO: {fileID: 0}
-  pm2: {fileID: 7551195033591937897, guid: 13627ec458431174f902671b3428138b, type: 3}
-  canvas: {fileID: 3672517676390712893, guid: c0e3eab77a361184c925f6b708a2c5cf, type: 3}
+  soulSO: {fileID: 11400000, guid: 80f959c35cea5e6438bb67aa798f3f16, type: 2}
+  pm2: {fileID: 0}
+  canvas: {fileID: 0}
   fadeTime: 2
   waitTime: 5
   soulsCollected: 0
-  empty: {fileID: 8851511266955268058, guid: fe32f616e3a1abb499d536ae163a695a, type: 3}
+  empty: {fileID: 0}
   zero: {fileID: 21300000, guid: bb8d84468e02c4c49b8b8c83b4d28805, type: 3}
   one: {fileID: 21300000, guid: 33dd140c6acecfe4c93b8e7be6cb94b5, type: 3}
   two: {fileID: 21300000, guid: cd81f21fa35adbe42a9e47715c8656c3, type: 3}

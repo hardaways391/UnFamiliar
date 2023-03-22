@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 public class Level_Loader : MonoBehaviour
 {
     public AudioSource buttonSound;
+
+    public GameObject loadCanvas;
+    public GameObject mainCanvas;
+
+
     //public GameObject optionScreen;
     public void Forest()
     {
@@ -38,6 +43,16 @@ public class Level_Loader : MonoBehaviour
         buttonSound.Play();
     }
 
-    // LevelLoad allows you to acess the scenes 
-    //public void LevelLoad(int buildum) => SceneManager.LoadScene(buildum);
+    public void LoadScene(int sceneId)
+    {
+        loadCanvas.SetActive(true);
+        mainCanvas.SetActive(false);
+        StartCoroutine(LoadSceneAsync(sceneId));
+    }
+
+    IEnumerator LoadSceneAsync(int sceneId)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId);
+        yield return null;
+    }
 }

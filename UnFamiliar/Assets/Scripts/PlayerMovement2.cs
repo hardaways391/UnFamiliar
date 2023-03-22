@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using Unity.Mathematics;
+using UnityEngine.UI;
 
 public class PlayerMovement2 : MonoBehaviour
 {
@@ -9,16 +11,28 @@ public class PlayerMovement2 : MonoBehaviour
     public float verticalVelocity;
     private float groundedTimer;        // to allow jumping when going down ramps
     public float baseSpeed;
-    private float speed;
+    public float speed;
     public float jumpHeight = 1.75f;
     private float gravity = 9.8f;
     public float pushForce = 2f;
-
+    
     public bool movementLocked;
+    public bool groundedPlayer;
 
     public Vector3 move;
+
+    public quaternion right = Quaternion.Euler(0f, 0f, 0f);
+    public quaternion left = Quaternion.Euler(0f, 180f, 0f); // changing directions
+    public float rotationSpeed = .01f;
+
+    //=======================Stamina system==========================
+    public float stamina = 50f;
+    private float staminaConsumption = 10f;
+    private float rechargeRate = 5f;
+    private float maxStamina = 50f;
+    public Slider staminaBar;
     
-    float xDirect;
+    public float xDirect;
     private float zLock;
 
     private void Start()
@@ -26,6 +40,7 @@ public class PlayerMovement2 : MonoBehaviour
         //animator = GetComponent<Animator>();
         movementLocked= false;
         controller = gameObject.GetComponent<CharacterController>();
+        staminaBar.maxValue = 50f;
     }
 
     public void LockMovement()
@@ -45,7 +60,7 @@ public class PlayerMovement2 : MonoBehaviour
             return;
         }
 
-        bool groundedPlayer = controller.isGrounded;
+        groundedPlayer = controller.isGrounded;
         if (groundedPlayer)
         {
             groundedTimer = 0.2f; // small buffer to allow jumping on ramps (unlike v1)
@@ -90,15 +105,31 @@ public class PlayerMovement2 : MonoBehaviour
             move.z = (zLock - transform.position.z) * 25f;
         }
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        //============================ Sprinting and Stamina ==============================
+        if (Input.GetKey(KeyCode.LeftShift) && stamina > 0)
         {
-            speed = 3.75f;
+            speed = 3.75f; //sprint button
+            stamina -= staminaConsumption * Time.deltaTime; // drain stamina each second
         }
         else
         {
-            speed = baseSpeed;
+            speed = baseSpeed; // return us back to our base speed
 
             xDirect = Input.GetAxis("Horizontal") * speed;
+            if(stamina < maxStamina)
+            {
+                StartCoroutine(StaminaRecharge());
+            }
+        }
+        staminaBar.value = stamina;
+
+        if (move.x < 0)
+        {
+            transform.rotation = Quaternion.Lerp(left, right, Time.deltaTime * rotationSpeed); //rotate the player in the direction we are moving in
+        }
+        else if (move.x > 0)
+        {
+            transform.rotation = Quaternion.Lerp(right, left, Time.deltaTime * rotationSpeed); //rotate the player in the direction we are moving in
         }
 
         controller.Move(move * Time.deltaTime); // always call at the end so everything else is already lined up properly
@@ -113,5 +144,11 @@ public class PlayerMovement2 : MonoBehaviour
         }
         Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, 0); //else, push it
         body.velocity = pushDir * pushForce;
+    }
+
+    public IEnumerator StaminaRecharge()
+    {
+        yield return new WaitForSeconds(3);
+        stamina += rechargeRate * Time.deltaTime;
     }
 }

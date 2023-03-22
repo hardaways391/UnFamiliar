@@ -888,7 +888,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -9023709063581554442, guid: 041c9b4b2b375904aadf990ec0f1b8c6, type: 3}
+  - {fileID: 2100000, guid: d02151d26fc8c7449808a4252dd57a8c, type: 2}
   - {fileID: 1993282308170107758, guid: 041c9b4b2b375904aadf990ec0f1b8c6, type: 3}
   - {fileID: 4247043441468484335, guid: 041c9b4b2b375904aadf990ec0f1b8c6, type: 3}
   m_StaticBatchInfo:
@@ -1696,7 +1696,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 041c9b4b2b375904aadf990ec0f1b8c6, type: 3}
+  - {fileID: 2100000, guid: d2045cfc3836a7d4794e5c3ded083d1c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1992,7 +1992,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 0
-  m_Radius: 0.37
+  m_Radius: 0.35
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.0001
@@ -2129,6 +2129,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pm2: {fileID: 7551195033591937897}
   rascalAnimator: {fileID: 0}
+  rascal: {fileID: 0}
+  countDown: 0.25
 --- !u!114 &7551195033591937897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2144,10 +2146,26 @@ MonoBehaviour:
   controller: {fileID: 0}
   verticalVelocity: 0
   baseSpeed: 2
+  speed: 0
   jumpHeight: 1.75
   pushForce: 2
   movementLocked: 0
+  groundedPlayer: 0
   move: {x: 0, y: 0, z: 0}
+  right:
+    value:
+      x: 0
+      y: 0
+      z: 0
+      w: 1
+  left:
+    value:
+      x: 0
+      y: 1
+      z: 0
+      w: -0.00000004371139
+  rotationSpeed: 0.01
+  xDirect: 0
 --- !u!114 &7551195033591937902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2631,6 +2649,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: godRays (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3492204591033861916, guid: 6e556e9495f4f4d4c847392b9509a5be,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3492204591033861919, guid: 6e556e9495f4f4d4c847392b9509a5be,
         type: 3}
       propertyPath: m_RootOrder
@@ -2774,7 +2797,7 @@ PrefabInstance:
     - target: {fileID: 5131028538892692043, guid: f4de97bf8d2016843a296004ba0f66f4,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4de97bf8d2016843a296004ba0f66f4, type: 3}

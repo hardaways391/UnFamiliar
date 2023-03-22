@@ -5,13 +5,32 @@ using UnityEngine;
 public class JumpPad : MonoBehaviour
 {
     public PlayerMovement2 playerMovement2; //reference the player movement script
-    public float springJumpHeight;
+    public float bigJumpHeight;
+    public float smallJumpHeight;
+    public int jumpNum = 0;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == ("Player"))
         {
-            playerMovement2.verticalVelocity += springJumpHeight; // increase the player's y position in the movement script by the value we set in unity
+            jumpNum++;
+            if (jumpNum < 3)
+            {
+                playerMovement2.verticalVelocity = smallJumpHeight; // increase the player's y position in the movement script by the value we set in unity
+            }
+            else if (jumpNum >= 3)
+            {
+                playerMovement2.verticalVelocity = bigJumpHeight; // increase the player's y position in the movement script by the value we set in unity
+            }
+
+        }
+    }
+
+    private void Update()
+    {
+        if (jumpNum >= 3)
+        {
+            jumpNum = 0;
         }
     }
 }
