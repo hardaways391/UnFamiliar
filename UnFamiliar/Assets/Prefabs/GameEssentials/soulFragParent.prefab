@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soulSO: {fileID: 11400000, guid: 80f959c35cea5e6438bb67aa798f3f16, type: 2}
-  pm2: {fileID: 0}
+  pm2: {fileID: 7551195033591937897, guid: 13627ec458431174f902671b3428138b, type: 3}
   canvas: {fileID: 0}
   fadeTime: 2
   waitTime: 5

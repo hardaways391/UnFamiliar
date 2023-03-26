@@ -28,7 +28,7 @@ public class PlayerMovement2 : MonoBehaviour
     //=======================Stamina system==========================
     public float stamina = 50f;
     private float staminaConsumption = 10f;
-    private float rechargeRate = 5f;
+    private float rechargeRate = 7.5f;
     private float maxStamina = 50f;
     public Slider staminaBar;
     
@@ -120,6 +120,10 @@ public class PlayerMovement2 : MonoBehaviour
             {
                 StartCoroutine(StaminaRecharge());
             }
+        }
+        if (stamina > maxStamina)
+        {
+            stamina = maxStamina;
         }
         staminaBar.value = stamina;
 
