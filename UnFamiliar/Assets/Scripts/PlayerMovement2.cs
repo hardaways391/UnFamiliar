@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using Unity.Mathematics;
 using UnityEngine.UI;
-using static UnityEditor.PlayerSettings;
+//using static UnityEditor.PlayerSettings;
 using Unity.Burst.CompilerServices;
 
 public class PlayerMovement2 : MonoBehaviour

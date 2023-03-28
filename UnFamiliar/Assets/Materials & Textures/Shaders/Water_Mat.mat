@@ -48,18 +48,18 @@ Material:
     - _Depth: 0.38
     - _Displacement: 0.82
     - _Displacement_Animation_Speed: 0.07
-    - _Displacement_Scale: 13.04
+    - _Displacement_Scale: 6
     - _Normal_Animation_Speed: 0.2
     - _Normal_Strength: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Smoothess: 0.515
-    - _Strength: 2
+    - _Strength: 0.16
     m_Colors:
-    - _Deep_Water_Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Deep_Water_Color: {r: 0, g: 0.53546095, b: 0.6415094, a: 1}
     - _Main_Normal_Tiling: {r: 10, g: 10, b: 0, a: 0}
     - _Secondary_Normal_Tiling_1: {r: 10, g: 10, b: 0, a: 0}
-    - _Shallow_Water_Color: {r: 0.1541919, g: 0.68818665, b: 0.990566, a: 0.59607846}
+    - _Shallow_Water_Color: {r: 0, g: 0.3177569, b: 0.5, a: 0.59607846}
   m_BuildTextureStacks: []
 --- !u!114 &2152159261516613136
 MonoBehaviour:

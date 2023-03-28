@@ -217,3 +217,54 @@ MonoBehaviour:
       m_YScaleBool: 0
       m_ZScaleBool: 0
     name: stonePath_EM
+  - gameObject: {fileID: 2970420313007517705, guid: 3f7a5db7be7b8774da6108442ba90d38,
+      type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 360, y: 360, z: 360}
+      m_ScaleRangeMin: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMax: {x: 1.4406588, y: 1.4835794, z: 1.573709}
+      m_UniformScale: {x: 1, y: 1}
+      m_UniformBool: 0
+      m_XRotationBool: 0
+      m_YRotationBool: 1
+      m_ZRotationBool: 0
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: Rock_EM
+  - gameObject: {fileID: 862624189998805201, guid: 1c9bb8d2bc36da9448a42b61b7e56270,
+      type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 360, y: 360, z: 360}
+      m_ScaleRangeMin: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMax: {x: 0.81791615, y: 0.7881317, z: 0.7273765}
+      m_UniformScale: {x: 1, y: 1}
+      m_UniformBool: 0
+      m_XRotationBool: 0
+      m_YRotationBool: 1
+      m_ZRotationBool: 0
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: Big_Rock_HT
+  - gameObject: {fileID: 3222195474372244723, guid: 660fa5846627e134a8fe8d82925a551b,
+      type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 360, y: 360, z: 360}
+      m_ScaleRangeMin: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMax: {x: 0.099252075, y: 0.10084838, z: 0.12356305}
+      m_UniformScale: {x: 1, y: 1}
+      m_UniformBool: 0
+      m_XRotationBool: 0
+      m_YRotationBool: 1
+      m_ZRotationBool: 0
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: rockSmallMountain_EM
