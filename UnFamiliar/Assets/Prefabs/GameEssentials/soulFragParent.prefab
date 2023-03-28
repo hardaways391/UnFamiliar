@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5ed5cf675a011ef4fb399e436b4c7ebf, type: 2}
+  - {fileID: 2100000, guid: 87e4e0b24a8117d4084fc6e36b8aec2e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soulSO: {fileID: 11400000, guid: 80f959c35cea5e6438bb67aa798f3f16, type: 2}
-  pm2: {fileID: 7551195033591937897, guid: 13627ec458431174f902671b3428138b, type: 3}
+  pm2: {fileID: 0}
   canvas: {fileID: 0}
   fadeTime: 2
   waitTime: 5

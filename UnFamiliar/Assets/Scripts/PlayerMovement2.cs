@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections;
 using Unity.Mathematics;
 using UnityEngine.UI;
+using static UnityEditor.PlayerSettings;
+using Unity.Burst.CompilerServices;
 
 public class PlayerMovement2 : MonoBehaviour
 {
@@ -31,7 +33,12 @@ public class PlayerMovement2 : MonoBehaviour
     private float rechargeRate = 7.5f;
     private float maxStamina = 50f;
     public Slider staminaBar;
-    
+
+    //======================= Rotate Cat=============================
+    public GameObject carModel;
+    public Transform raycastPoint; 
+    private RaycastHit hit;
+
     public float xDirect;
     private float zLock;
 
@@ -136,7 +143,16 @@ public class PlayerMovement2 : MonoBehaviour
             transform.rotation = Quaternion.Lerp(right, left, Time.deltaTime * rotationSpeed); //rotate the player in the direction we are moving in
         }
 
+        //============================== ROTATE CAT TO MATCH THE TERRAIN =========================
+        // Find location and slope of ground below the vehicle
+        Physics.Raycast(raycastPoint.position, Vector3.down, out hit);    // Keep at specific height above terrain
+
+        // Rotate to align with terrain
+        var targetRotation = Quaternion.FromToRotation(transform.up, hit.normal) * transform.rotation;
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 100);
+
         controller.Move(move * Time.deltaTime); // always call at the end so everything else is already lined up properly
+
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
