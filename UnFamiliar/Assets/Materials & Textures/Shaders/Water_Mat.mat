@@ -46,15 +46,15 @@ Material:
     - Vector1_2D28F683: 0.17
     - Vector1_FDAF1D7D: 1
     - _Depth: 0.38
-    - _Displacement: 0.82
+    - _Displacement: 0.48
     - _Displacement_Animation_Speed: 0.07
     - _Displacement_Scale: 6
     - _Normal_Animation_Speed: 0.2
     - _Normal_Strength: 1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Smoothess: 0.515
-    - _Strength: 0.16
+    - _Smoothess: 0.19
+    - _Strength: 0.32
     m_Colors:
     - _Deep_Water_Color: {r: 0, g: 0.53546095, b: 0.6415094, a: 1}
     - _Main_Normal_Tiling: {r: 10, g: 10, b: 0, a: 0}

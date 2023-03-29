@@ -145,7 +145,7 @@ public class PlayerMovement2 : MonoBehaviour
 
         //============================== ROTATE CAT TO MATCH THE TERRAIN =========================
         // Find location and slope of ground below the vehicle
-        Physics.Raycast(raycastPoint.position, Vector3.down, out hit);    // Keep at specific height above terrain
+        Physics.Raycast(raycastPoint.position, Vector3.down, out hit, 1);    // Keep at specific height above terrain
 
         // Rotate to align with terrain
         var targetRotation = Quaternion.FromToRotation(transform.up, hit.normal) * transform.rotation;
@@ -162,7 +162,7 @@ public class PlayerMovement2 : MonoBehaviour
         {
             return;
         }
-        Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, 0); //else, push it
+        Vector3 pushDir = new Vector3(hit.moveDirection.x, hit.moveDirection.y, 0); //else, push it
         body.velocity = pushDir * pushForce;
     }
 
