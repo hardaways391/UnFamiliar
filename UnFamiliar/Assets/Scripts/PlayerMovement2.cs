@@ -70,7 +70,7 @@ public class PlayerMovement2 : MonoBehaviour
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer)
         {
-            groundedTimer = 0.2f; // small buffer to allow jumping on ramps (unlike v1)
+            groundedTimer = 0.4f; // small buffer to allow jumping on ramps (unlike v1)
         }
         if (groundedTimer > 0)
         {

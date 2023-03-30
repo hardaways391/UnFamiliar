@@ -133,7 +133,7 @@ MonoBehaviour:
   clip: {fileID: 8300000, guid: 589fdc666475b2643956b7e345e8d43d, type: 3}
   animator: {fileID: 2565499329055998031}
   disappear: disappear
-  particles: {fileID: 1171136648328235526, guid: 4ba19cca64614bc4f9b5ef2ab659b12d,
+  particles: {fileID: 1171136648328235526, guid: d9bd5a098dc25314c8cc21a6fa2f47ec,
     type: 3}
 --- !u!95 &2565499329055998031
 Animator:
